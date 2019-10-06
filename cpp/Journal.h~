@@ -1,0 +1,73 @@
+#include <string>
+#include <bits/stdc++.h>
+
+#ifndef JOURNAL_H
+#define JOURNAL_H
+
+class Journal{
+  std::string filePath;
+
+public:
+  Journal();
+  Journal(std::string);
+  bool createJournalFile();
+  const char* getFilePath();
+};
+
+
+Journal::Journal(){
+  filePath = "/tmp/entry.journal";
+}
+
+Journal::Journal(std::string fp){
+  filePath = fp;
+}
+
+bool Journal::createJournalFile(){
+
+  std::fstream file;
+
+  file.open(filePath, std::ios::out);
+
+  if (!file){
+    return false;
+  }
+  
+  return true;
+}
+
+const char* Journal::getFilePath(){
+  return filePath.c_str();
+}
+
+// namespace journal{
+//   std::string filePath = "/tmp/entry.journal";
+  
+//   ///////////////////////
+//   // createJournalFile //
+//   ///////////////////////
+//   bool createJournalFile(){
+
+//     // create the file stream object
+//     std::fstream journalFile;
+
+//     // create the file
+//     journalFile.open(filePath, std::ios::out);
+
+//     // check if file created ok
+//     if (!journalFile){
+//       return false;
+//     }
+
+//     journalFile.close();
+
+//     // Happy path
+//     return true;
+//   }
+
+  
+// }
+
+
+
+#endif

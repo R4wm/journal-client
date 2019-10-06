@@ -1,0 +1,24 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <cstdio>
+#include "Journal.h"
+
+int main(){
+
+  Journal journalEntry;
+
+  if (! journalEntry.createJournalFile()){
+    printf("Failed to create journal file: %s\n", journalEntry.getFilePath());
+  }
+  printf("DOne");
+
+  // if (! journalEntry->createJournalEnrty()){
+  //   printf("Failed to create: %s", journalEntry::filePath);
+  // }
+  // if (!journal::createJournalFile()){
+  //   printf("Failed to create file: %s", "stuff");
+  // }else{
+  //   printf("Created file ok: %s\n", journal::filePath.c_str());
+  // }
+  return 0;
+}
